@@ -19,14 +19,21 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, MainView {
         btn_counter1.setOnClickListener(this)
         btn_counter2.setOnClickListener(this)
         btn_counter3.setOnClickListener(this)
-
+        btn_counter1minus.setOnClickListener(this)
+        btn_counter2minus.setOnClickListener(this)
+        btn_counter3minus.setOnClickListener(this)
     }
 
     override fun setButtonText(index: ButtonCounter, text: String) {
         when(index) {
-            ButtonCounter.FIRST -> btn_counter1.text = text
-            ButtonCounter.SECOND -> btn_counter2.text = text
-            ButtonCounter.THIRD -> btn_counter3.text = text
+            ButtonCounter.FIRST -> counter1.text = text
+            ButtonCounter.SECOND -> counter2.text = text
+            ButtonCounter.THIRD -> counter3.text = text
+            ButtonCounter.FIRSTMINUS -> counter1.text = text
+            ButtonCounter.SECONDMINUS -> counter2.text = text
+            ButtonCounter.THIRDMINUS -> counter3.text = text
+
+
         }
     }
 
@@ -35,6 +42,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, MainView {
             R.id.btn_counter1 -> presenter.counterClick(ButtonCounter.FIRST)
             R.id.btn_counter2 -> presenter.counterClick(ButtonCounter.SECOND)
             R.id.btn_counter3 -> presenter.counterClick(ButtonCounter.THIRD)
+            R.id.btn_counter1minus -> presenter.counterClick(ButtonCounter.FIRSTMINUS)
+            R.id.btn_counter2minus -> presenter.counterClick(ButtonCounter.SECONDMINUS)
+            R.id.btn_counter3minus -> presenter.counterClick(ButtonCounter.THIRDMINUS)
+
         }
     }
 }
