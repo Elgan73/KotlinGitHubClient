@@ -16,4 +16,9 @@ class Model {
         counters[index]++
         return getCurrent(index)
     }
+
+    fun previous(index: Int): Int {
+        counters[index]--
+        return getCurrent(index)
+    }
 }
